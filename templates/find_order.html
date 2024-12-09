@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Find Order Items{% endblock %}
+{% block content %}
+<h2>Find Order Items</h2>
+<form method="post" action="{{ url_for('find_order') }}">
+  <label>Order ID: <input type="text" name="orderID"></label>
+  <input type="submit" value="Find">
+</form>
+{% if items %}
+  <h3>Items in Order {{ request.form.orderID }}</h3>
+  <table>
+    <tr><th>ItemID</th><th>Description</th><th>Location</th></tr>
+    {% for it in items %}
+    <tr>
+      <td>{{ it.ItemID }}</td>
+      <td>{{ it.iDescription }}</td>
+      <td>{{ it.roomNum }}-{{ it.shelfNum }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+{% endif %}
+{% endblock %}
+
