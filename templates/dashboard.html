@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<h2>Welcome {{ session.username if session.username else 'Guest' }}!</h2>
+<p>Use the navigation links above to access features.</p>
+{% endblock %}
+

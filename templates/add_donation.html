@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Add Donation{% endblock %}
+{% block content %}
+<h2>Add a Donation</h2>
+<form method="post">
+    <label>Item ID: <input type="text" name="itemID"></label><br>
+    <label>Notes:<br><textarea name="notes"></textarea></label><br>
+    <input type="submit" value="Submit">
+</form>
+{% endblock %}
+

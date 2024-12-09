@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Bulk Update Location{% endblock %}
+{% block content %}
+<h2>Bulk Update Item Location</h2>
+<form method="post">
+    <label>Item IDs (comma separated): <input type="text" name="itemIDs"></label><br>
+    <label>Room Number (int): <input type="text" name="roomNum"></label><br>
+    <label>Shelf Number (int): <input type="text" name="shelfNum"></label><br>
+    <input type="submit" value="Update">
+</form>
+{% endblock %}
+

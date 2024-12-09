@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Edit Profile{% endblock %}
+{% block content %}
+<h2>Edit Profile</h2>
+<form method="post">
+    <label>Email: <input type="text" name="email" value="{{ user.email if user.email else '' }}"></label><br>
+    <label>Phone: <input type="text" name="phone" value="{{ phone if phone else '' }}"></label><br>
+    <input type="submit" value="Update">
+</form>
+{% endblock %}
+

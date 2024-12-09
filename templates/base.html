@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WelcomeHome - {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header>
+    <h1>WelcomeHome</h1>
+    <nav>
+        <a href="{{ url_for('dashboard') }}">Dashboard</a>
+        {% if session.username %}
+        <a href="{{ url_for('edit_profile') }}">Edit Profile</a>
+        <a href="{{ url_for('add_donation') }}">Add Donation</a>
+        <a href="{{ url_for('donor_history') }}">Donor History</a>
+        <a href="{{ url_for('bulk_update_location') }}">Bulk Update Location</a>
+        <a href="{{ url_for('order_progress') }}">Order Progress</a>
+        <a href="{{ url_for('rank_volunteers') }}">Rank Volunteers</a>
+        <a href="{{ url_for('auth.logout') }}">Logout</a>
+        {% else %}
+        <a href="{{ url_for('auth.register') }}">Register</a>
+        <a href="{{ url_for('auth.login') }}">Login</a>
+        {% endif %}
+    </nav>
+</header>
+<main>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <ul class="flashes">
+        {% for category, message in messages %}
+          <li class="{{ category }}">{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+    {% if error %}
+    <p style="color:red">{{ error }}</p>
+    {% endif %}
+    {% block content %}{% endblock %}
+</main>
+<footer>
+    <p>&copy; 2024 WelcomeHome</p>
+</footer>
+</body>
+</html>
+

@@ -1,0 +1,23 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+header, nav, footer {
+    background: #eee;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.flashes .error {
+    color: red;
+}
+
+.flashes .success {
+    color: green;
+}
+
+.flashes .info {
+    color: blue;
+}
+

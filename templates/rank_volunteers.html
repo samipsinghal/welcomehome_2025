@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Rank Volunteers{% endblock %}
+{% block content %}
+<h2>Rank of Volunteers By Activity ({{ start }} - {{ end }})</h2>
+<table>
+<tr><th>UserName</th><th>Deliveries Count</th></tr>
+{% for r in ranking %}
+<tr><td>{{ r.userName }}</td><td>{{ r.deliveries_count }}</td></tr>
+{% endfor %}
+</table>
+{% endblock %}
+

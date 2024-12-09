@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Order Progress{% endblock %}
+{% block content %}
+<h2>Order Progress</h2>
+<table>
+<tr><th>Order ID</th><th>Notes</th><th>Items Found</th><th>Items Missing</th></tr>
+{% for o in orders %}
+<tr>
+    <td>{{ o.orderID }}</td>
+    <td>{{ o.orderNotes }}</td>
+    <td>{{ o.items_found if o.items_found else 0 }}</td>
+    <td>{{ o.items_missing if o.items_missing else 0 }}</td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}
+
